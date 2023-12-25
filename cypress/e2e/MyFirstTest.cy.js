@@ -27,8 +27,8 @@ describe('My First Test case', () => {
 
 
 
-// describe('My First Test', () => {           // In place of "=>" we can use "funtion()", because both are same in javascript
-//     it('Does not do much!', () => {
-//       expect(true).to.equal(true)
-//     })
-//   })
+describe('My First Test', () => {           // In place of "=>" we can use "funtion()", because both are same in javascript
+    it('Does not do much!', () => {
+      expect(true).to.equal(true)
+    })
+  })
