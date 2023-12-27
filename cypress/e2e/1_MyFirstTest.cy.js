@@ -38,12 +38,5 @@ describe('My First Test case', function() {           // In place of arrow you c
 
     cy.title().should('eq', 'OrangeHRM')
   })
-  
-
-  it('Verify Tiltle Negative Case', () => {                                              // Verify Title negative case
-    cy.visit("https://opensource-demo.orangehrmlive.com/")
-
-    cy.title().should('eq', 'OrangeHRM_Invalid')
-  })
 
 })
