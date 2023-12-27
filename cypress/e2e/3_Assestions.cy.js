@@ -2,9 +2,6 @@
 
 
 
-
-
-
 describe("Asserstion in Cypress", () => {
 
     it("Implicit Assertion", () =>{
@@ -43,9 +40,36 @@ describe("Asserstion in Cypress", () => {
 
 
         // --- To validate that some text is present inside input box or not
+        cy.get("input[placeholder='Username']").type("admin")
+        .should('have.value', 'admin')          // to check that it has value admin or not
+
+    })
+
+
+    it("Explicit Assertion", () => {              // get the element and pass it into user defined javascrtipt funtion.        
+
+        cy.visit("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login")
+        cy.get("input[placeholder='Username']").type("Admin")
+        cy.get("input[placeholder='Password']").type("admin123")
+        cy.get("button[type='submit']").click()
         
+        let expname = 'Paul Collings';     // expected name
+
+        cy.get(".oxd-userdropdown-name").then( (x)=> {
+
+            let actname = x.text()
+
+            // BDD Style
+            expect(actname).to.equal(expname)
+            expect(actname).to.not.equal(expname)
+
+            
+            // TDD Style
+            assert.equal(actname, expname)
+            assert.not.equal(actname, expname)
 
 
+        })
 
     })
 
