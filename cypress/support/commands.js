@@ -1,4 +1,5 @@
 /// <refrence types="Cypress" />
+/// <refrence types="cypress-xpath" />
 
 // ***********************************************
 // This example commands.js shows you how to

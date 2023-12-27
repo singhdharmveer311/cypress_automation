@@ -17,10 +17,16 @@ CSS Selector
 -------------
 tag id,  tag class,  tag attribute ,  tag class attribute -> 4 type, in all these 4 tag is optional
 ***** Ex: Use selctorHUb , for id you can directly use "#" and the id name, ex "#id_name", for class we can ".class_value",  for attribute "[attribure='value']"
-For ID -> "#id_name"
-For Class -> ".class_name"
-For Attribute -> "[attribute='value']"
+1. For ID -> "#id_name"
+2. For Class -> ".class_name"
+3. For Attribute -> "[attribute='value']"
+4. Class[attirbute='value']
+
 we can also wirte all these in format like tag.id.id_name, tag is optional
+
+
+XPATH ----------
+2nd Way is XPATH, for that we need plugin , search cypress plugin -> Cypress-xpath -> Command `npm install -D cypress-xpath`
 */
 
 

@@ -42,6 +42,9 @@ describe("Asserstion in Cypress", () => {
         cy.xpath('//a').should('have.length', '5')
 
 
+        // --- To validate that some text is present inside input box or not
+        
+
 
 
     })
