@@ -1,4 +1,21 @@
+/*  
+1) Implicit Assertion 
+    should
+    and
 
+    eq
+    contain
+    include 
+    exist
+    have.length
+    have.value
+    
+    
+2) Explicit Assertion
+    expect
+    assert
+    
+*/
 
 
 

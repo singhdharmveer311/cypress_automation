@@ -1,5 +1,5 @@
-/// <refrence types="Cypress" />
-/// <refrence types="cypress-xpath" />
+/// <refrence types="Cypress" />            // for cypress 
+/// <refrence types="cypress-xpath" />      // for x-path,  we are using "///"
 
 // ***********************************************
 // This example commands.js shows you how to
