@@ -28,6 +28,7 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 
+
 Cypress.Commands.add('getIframe', (index)=> {
     return cy.get(index)
             .its('0.contentDocument')       // That button is located inside the body element of the document of the iframe element
