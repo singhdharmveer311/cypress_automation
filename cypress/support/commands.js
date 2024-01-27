@@ -26,3 +26,12 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+
+Cypress.Commands.add('getIframe', (index)=> {
+    return cy.get(index)
+            .its('0.contentDocument')       // That button is located inside the body element of the document of the iframe element
+            .should('exist')        // check that it existed or not
+            .then(cy.wrap);         // wrap it so that it can be 
+})
+
