@@ -71,7 +71,7 @@ describe("Alerts in Cypress", () => {
     })
 
 
-    it.only('Authntication POPup by passing username and password in URL', ()=> {
+    it('Authntication POPup by passing username and password in URL', ()=> {
 
         cy.visit('https://admin:admin@the-internet.herokuapp.com/basic_auth')
         cy.get("div[class='example'] p").should('have.contain', 'Congratulations')
