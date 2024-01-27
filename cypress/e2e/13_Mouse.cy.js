@@ -102,9 +102,11 @@ describe('Mouse handling, ', () => {
         // Armenia Flag
         cy.get("cy.get(':nth-child(1) > tbody > :nth-child(3) > :nth-child(2)')").scrollIntoView({duration:1000});
         cy.get(':nth-child(1) > tbody > :nth-child(3) > :nth-child(2)').should('be.visible');
+
+        
     })
 
-    
+
 
 
 })
