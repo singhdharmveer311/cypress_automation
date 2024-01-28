@@ -1,6 +1,6 @@
 //click on link using label
 // over writing existing contains() command
-// re-usuable custom command
+// re-usuable custom command/Users/dharmveersingh/Documents/projects/cypressautomation/cypress/e2e/Navigation.cy.js
 
 describe('Custom commands', () => {
 
