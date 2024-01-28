@@ -4,7 +4,7 @@
 
 describe('Custom commands', () => {
 
-    it.only("handling links", () => {  // by using a lable only we can click ( so we pass lable only and it will click )
+    it("handling links", () => {  // by using a lable only we can click ( so we pass lable only and it will click )
        
         cy.visit("https://demo.nopcommerce.com/");
 
@@ -17,12 +17,12 @@ describe('Custom commands', () => {
 
     })
 
-    it("overwriting existing command", () => {
+    it.only("overwriting existing command", () => {
     
         cy.visit("https://demo.nopcommerce.com/");
 
        //using custom command
-       cy.clickLink("APPLE MACBOOK PRO 13-inch");
+       cy.clickLink("APPLE MACBOOK PRO 13-inch");   // everything in uppar case , so it should not perform the action because .contains in case senstitive
        cy.get("div[class='product-name'] h1").should('have.text','Apple MacBook Pro 13-inch');
     })
 
