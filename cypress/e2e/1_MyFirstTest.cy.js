@@ -12,6 +12,12 @@
     TestSuite ==== TestCase == Test Steps
     Spec File(cy.js) --> Describe blocks(test suites ) -> It blocks ( test )
 
+
+
+    `npx cypress run --spec cypress/e2e/1_MyFirstTest.cy.js --browser chrome` = to run on chrome
+    `npx cypress run --headed --spec cypress/e2e/1_MyFirstTest.cy.js --browser chrome` = to run in headed mode to see on UI
+    
+
 */
 
 describe('My First Test case', () => {

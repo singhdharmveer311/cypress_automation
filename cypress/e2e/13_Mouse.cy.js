@@ -1,4 +1,5 @@
 import 'cypress-iframe'
+require ('@4tw/cypress-drag-drop')   // Used for drag and drop import in cypress `npm install --save-dev @4tw/cypress-drag-drop`
 
 /* 
 Cypress trigger is used in all these mouse action 
@@ -52,27 +53,59 @@ describe('Mouse handling, ', () => {
     })
 
     it('Double Click ', () => {
-        cy.visit('https://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_ev_ondblclick');
+        // cy.visit('https://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_ev_ondblclick');
+        // // cy.get('#accept-choices').click();
 
-        cy.frameLoaded("#iframeResult") // to laod the iFrame
+        // cy.frameLoaded("#iframeResult") // to laod the iFrame
 
-        // Approach 1 - trigger()
-        cy.iframe('#iframeResult').find("button[ondblclick='myFunction()']").trigger('dblclick');     // double click is db click
-        cy.iframe('#iframeResult').find('#demo').should('have.value', 'Hello World');
+        // // Approach 1 - trigger()
+        // cy.iframe('#iframeResult').find("button[ondblclick='myFunction()']").trigger('dblclick');     // double click is db click
+        // cy.iframe('#iframeResult').find('#demo').should('have.value', 'Hello World');
 
+        // // Approach 2 - Direct Doble Click
+        // cy.iframe('#iframeResult').find("button[ondblclick='myFunction()']").dblclick(); // direct double click
+        // cy.wait(1000)
+
+
+        // WORKING WEBSITE - IFRAME IS NOT WORKING
+        cy.visit('https://demo.guru99.com/test/simple_context_menu.html');
+        cy.get("button[ondblclick='myFunction()']").dblclick();
+        cy.wait(1000);
+        cy.on('window:alert', (t) => {
+            expect(t).to.contains('You double clicked me.. Thank You..')
+
+        })
 
     })
 
     it('Drag and Drop using plugin ', () => {
+        cy.visit('http://www.dhtmlgoodies.com/scripts/drag-drop-custom/demo-drag-drop-3.html');
+        cy.get('#box5').should('be.visible');
+        cy.get('#box106').should('be.visible');
 
+        cy.wait(2000);
+        
+        // cy.get('#box5').drag('#box106');  // *** sometime we get 4000 timeout delay in cypress execution so we use "FORCE" method
+        cy.get('#box5').drag('#box106', {force:true});
+    })
+
+
+    // SCROLLING IN CYPRESS - https://docs.cypress.io/api/commands/scrollIntoView 
+    it.only('Scrolling Page ', () => {
+
+        cy.visit('https://www.countries-ofthe-world.com/flags-of-asia.html');
+
+        // India Flag
+        cy.get(':nth-child(1) > tbody > :nth-child(17) > :nth-child(2)').scrollIntoView({duration:2000}); // 2 sec ke break me scrool karega
+        cy.get(':nth-child(1) > tbody > :nth-child(17) > :nth-child(2)').should('be.visible');
+
+        // Armenia Flag
+        cy.get("cy.get(':nth-child(1) > tbody > :nth-child(3) > :nth-child(2)')").scrollIntoView({duration:1000});
+        cy.get(':nth-child(1) > tbody > :nth-child(3) > :nth-child(2)').should('be.visible');
 
     })
 
 
-    it('Scrolling Page ', () => {
-
-
-    })
 
 
 })
